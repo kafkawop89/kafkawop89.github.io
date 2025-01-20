@@ -3,16 +3,16 @@ const gallery = document.querySelector('.gallery');
 
 // Lista de nombres de archivos (puedes generarla automáticamente)
 const fotos = [
-  'foto1.jpg',
-  'foto2.jpg',
-  'foto3.jpg',
-  'foto4.jpg',
-  'foto5.jpg',
-  'foto6.jpg',
-  'foto7.jpg',
-  'foto8.jpg',
-  'foto9.jpg',
-  'foto10.jpg'
+  'foto1.JPG',
+  'foto2.JPG',
+  'foto3.JPG',
+  'foto4.JPG',
+  'foto5.JPG',
+  'foto6.JPG',
+  'foto7.JPG',
+  'foto8.JPG',
+  'foto9.JPG',
+  'foto10.JPG'
   // Agrega aquí todos los nombres de tus fotos
 ];
 
