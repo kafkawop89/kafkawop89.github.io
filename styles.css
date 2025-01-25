@@ -24,10 +24,11 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(2); /* Aumenta el tamaño de la imagen */
+  transform: translate(-50%, -50%) scale(1.5); /* Aumenta el tamaño de la imagen */
   z-index: 1000; /* Asegura que la imagen esté encima de todo */
-  max-width: 90%; /* Limita el tamaño máximo */
-  max-height: 90%;
+  max-width: 80%; /* Limita el tamaño máximo */
+  max-height: 80%;
+  transition: transform 0.3s ease-in-out; /* Animación más suave */
 }
 
 /* Fondo oscuro cuando la imagen está ampliada */
