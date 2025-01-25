@@ -29,7 +29,7 @@ fotos.forEach(foto => {
 gallery.addEventListener('click', (event) => {
   if (event.target && event.target.tagName === 'IMG') {
     const image = event.target;
-    
+
     // Crear overlay
     const overlay = document.createElement('div');
     overlay.classList.add('overlay');
