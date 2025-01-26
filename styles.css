@@ -24,7 +24,7 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1.5); /* Zoom aumentado */
+  transform: translate(-50%, -50%) scale(1.5); /* Aumenta la imagen en 1.5x */
   z-index: 1000; /* Imagen encima del resto */
   max-width: 80%; /* Limita el tamaño máximo */
   max-height: 80%; /* Limita el tamaño máximo */
