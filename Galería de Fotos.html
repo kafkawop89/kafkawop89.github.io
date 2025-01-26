@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería de Fotos</title>
+  
+  <!-- Estilos de Blueimp Gallery -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/blueimp-gallery/2.36.0/css/blueimp-gallery.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      padding: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Galería de Fotos</h1>
+
+  <!-- Contenedor para las imágenes de la galería -->
+  <div id="links" class="gallery"></div>
+
+  <!-- Incluir los scripts necesarios de Blueimp Gallery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-gallery/2.36.0/js/blueimp-gallery.min.js"></script>
+
+  <script>
+    // Número total de imágenes
+    const totalImages = 148;
+
+    // Contenedor donde se agregarán los enlaces
+    const galleryContainer = document.getElementById("links");
+
+    // Generar las imágenes dinámicamente
+    for (let i = 1; i <= totalImages; i++) {
+      const imgNumber = i;  // Usamos el número tal cual (sin formato de 3 dígitos)
+
+      // Crear el enlace <a> y la imagen <img>
+      const anchor = document.createElement('a');
+      anchor.href = `imagenes/Foto-${imgNumber}.JPG`; // Enlace a la imagen completa
+      anchor.title = `Foto ${imgNumber}`;
+
+      const image = document.createElement('img');
+      image.src = `imagenes/thumbnails/Foto-${imgNumber}.JPG`; // Ruta de la miniatura
+      image.alt = `Foto ${imgNumber}`;
+      
+      // Añadir la imagen al enlace y el enlace al contenedor
+      anchor.appendChild(image);
+      galleryContainer.appendChild(anchor);
+    }
+
+    // Inicializar la galería Blueimp al hacer clic en las imágenes
+    document.getElementById('links').onclick = function (event) {
+      event = event || window.event;
+      var target = event.target || event.srcElement;
+      var link = target.src ? target.parentNode : target;
+      var options = { index: link, event: event };
+      var links = this.getElementsByTagName('a');
+      blueimp.Gallery(links, options);
+    }
+  </script>
+  
+</body>
+</html>
